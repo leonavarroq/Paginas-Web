@@ -1,0 +1,10 @@
+#aboutme {
+  background-color: white;
+  max-width: 100%;
+}
+
+@media screen and (max-width: 425px) and (width > 375px) {
+  .mobile-padding {
+    padding: 0 15%;
+  }
+}

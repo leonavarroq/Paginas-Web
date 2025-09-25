@@ -1,0 +1,12 @@
+@import "tailwindcss";
+
+#panel-left {
+  color: var(--default-color);
+  background-color: #040b14;
+  transition: all ease-in-out 0.3s;
+  border-right: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+}
+
+#panel-right {
+  max-width: 100%;
+}
