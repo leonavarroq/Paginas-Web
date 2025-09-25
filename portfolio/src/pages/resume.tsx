@@ -11,7 +11,6 @@ import { LeftRevealEffect } from "../efectos/leftReveal";
 import { RightRevealEffect } from "../efectos/rightReveal";
 
 function Resume() {
-  // Datos de tus habilidades
   const currentSkills = [
     {
       id: 1,
@@ -80,9 +79,7 @@ function Resume() {
           <h5 className="text-2xl font-medium pb-2 xl:text-4xl 2xl:text-6xl">Experiencia</h5>
         </UpRevealEffect>
       </div>
-      {/* Contenedor de la tarjeta de habilidad con animación */}
       <Swiper
-        // install Swiper modules
         modules={[Navigation, Pagination]}
         spaceBetween={10}
         slidesPerView={1}

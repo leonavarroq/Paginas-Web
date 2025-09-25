@@ -1,10 +1,4 @@
-import {
-  motion,
-  // useMotionValueEvent,
-  useScroll,
-  useSpring,
-  useTransform,
-} from "framer-motion";
+import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 import { Children, type ReactNode, useRef } from "react";
 
 export default function Parallax({ children }: { children: ReactNode }) {
@@ -13,8 +7,8 @@ export default function Parallax({ children }: { children: ReactNode }) {
   const section = Children.toArray(children).map((item: any) => {
     return item;
   });
-  //if (Children.count(children) < 2) return;
 
+  //if (Children.count(children) < 2) return;
   // motion stuff
   const { scrollYProgress } = useScroll({ target });
   const y = useTransform(scrollYProgress, [0, 1], ["0%", "70%"]);
@@ -23,10 +17,6 @@ export default function Parallax({ children }: { children: ReactNode }) {
   const scale2 = useSpring(useTransform(scrollYProgress, [0, 1], [0.8, 1]));
   const opacity = useTransform(scrollYProgress, [0, 0.75], [1, 0]);
 
-  // debug
-  //useMotionValueEvent(scrollYProgress, 'change', (last) => {
-  //console.log('Scroll', last);
-  //});
   return (
     <motion.div ref={target}>
       <motion.div

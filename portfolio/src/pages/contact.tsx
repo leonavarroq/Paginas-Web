@@ -6,9 +6,7 @@ interface FormData {
   mensaje: string;
 }
 
-// Nuevo componente para encapsular la lógica de un solo formulario.
 const ContactForm = ({ title, formType }: { title: string; formType: number }) => {
-  // 2. Usamos la interface con useState para tipar el estado.
   const [formData, setFormData] = useState<FormData>({
     nombre: "",
     email: "",
@@ -43,19 +41,16 @@ const ContactForm = ({ title, formType }: { title: string; formType: number }) =
   const validateForm = () => {
     const newErrors: Partial<FormData> = {};
 
-    // Validación del campo de nombre.
     if (!formData.nombre.trim()) {
       newErrors.nombre = "Este campo es obligatorio.";
     }
 
-    // Validación del campo de email.
     if (!formData.email.trim()) {
       newErrors.email = "Este campo es obligatorio.";
     } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
       newErrors.email = "El correo electrónico no es válido.";
     }
 
-    // Validación del campo de mensaje.
     if (!formData.mensaje.trim()) {
       newErrors.mensaje = "Este campo es obligatorio.";
     }
@@ -88,7 +83,7 @@ const ContactForm = ({ title, formType }: { title: string; formType: number }) =
   // Cierra el modal y borra los datos del formulario.
   const closeModal = () => {
     setIsModalOpen(false);
-    handleClear(); // Borra los datos del formulario al cerrar el modal
+    handleClear();
   };
 
   // Renderizado del formulario según el tipo.
@@ -212,7 +207,6 @@ const ContactForm = ({ title, formType }: { title: string; formType: number }) =
     }
   };
 
-  // Función de utilidad para convertir a "Title Case".
   const toTitleCase = (str: string) => {
     return str.replace(
       /\w\S*/g,
@@ -232,7 +226,6 @@ const ContactForm = ({ title, formType }: { title: string; formType: number }) =
         }
       `}</style>
       {renderForm()}
-      {/* Modal de éxito asociado a este formulario */}
       {isModalOpen && (
         <div className="fixed inset-0 overflow-y-auto h-full w-full flex justify-center items-center z-50 bg-gray-600/50 backdrop-blur-sm">
           <div className="relative bg-white p-8 rounded-2xl shadow-xl w-96 text-center">
@@ -254,7 +247,6 @@ const ContactForm = ({ title, formType }: { title: string; formType: number }) =
   );
 };
 
-// Componente principal que renderiza los dos formularios.
 const App = () => {
   return (
     <section id="contact" className="pt-20 pb-20 px-4 md:px-8 bg-black">

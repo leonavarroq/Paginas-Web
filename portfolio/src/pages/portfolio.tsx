@@ -50,14 +50,11 @@ function Portfolio() {
       category: "Categoria",
     },
   ];
-  // Agrupamos los items en sub-arreglos de 3
   const groupedItems: any = [];
   for (let i = 0; i < items.length; i++) {
     if (i % 3 === 0) {
-      // Creamos un nuevo grupo cada vez que el índice es divisible por 3
       groupedItems.push([]);
     }
-    // Añadimos el item al último grupo creado
     groupedItems[groupedItems.length - 1].push(items[i]);
   }
 
