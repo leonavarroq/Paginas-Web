@@ -7,7 +7,7 @@ interface carrousel {
   imgUrl: string;
 }
 
-export default function Carrousel({ title, text, imgUrl }: carrousel) {
+export default function Carrousel({ title, imgUrl }: carrousel) {
   return (
     <Swiper
       // install Swiper modules

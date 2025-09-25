@@ -1,4 +1,4 @@
-import React, { Suspense, useEffect } from "react";
+import React, { Suspense } from "react";
 import "./App.css";
 import Footer from "./layout/footer";
 const Navbar = React.lazy(() => import("./layout/navbar"));

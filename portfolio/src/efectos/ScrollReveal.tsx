@@ -1,12 +1,12 @@
 import { useInView, motion } from "motion/react";
-import { type ReactNode, useRef } from "react";
+import { useRef } from "react";
 
 const variants = {
   inicial: {
     opacitiy: 0,
     scale: 0,
   },
-  animate: ({ index }) => ({
+  animate: () => ({
     opacity: 1,
     scale: 1,
     transition: {
@@ -15,7 +15,7 @@ const variants = {
   }),
 };
 
-export const ScrollRevealEffect = ({ children, index }) => {
+export const ScrollRevealEffect = ({ children, index }: any) => {
   const ref = useRef(null);
   const isInView = useInView(ref, {
     once: true,

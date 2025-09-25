@@ -51,7 +51,7 @@ function Portfolio() {
     },
   ];
   // Agrupamos los items en sub-arreglos de 3
-  const groupedItems = [];
+  const groupedItems: any = [];
   for (let i = 0; i < items.length; i++) {
     if (i % 3 === 0) {
       // Creamos un nuevo grupo cada vez que el índice es divisible por 3
@@ -69,9 +69,9 @@ function Portfolio() {
         </UpRevealEffect>
       </div>
       <div className="grid grid-cols-2 gap-4 md:grid-cols-3 :xl:auto-cols-min">
-        {groupedItems.map((group, groupIndex) => (
+        {groupedItems.map((group: any, groupIndex: any) => (
           <div key={groupIndex} className="grid col-span-full sm:col-auto gap-3">
-            {group.map((item: any, index) => (
+            {group.map((item: any, index: number) => (
               <ScrollRevealEffect key={index} index={index}>
                 <div key={`${groupIndex}-${index}`} className="portfolio-item">
                   <img

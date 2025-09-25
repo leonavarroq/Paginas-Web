@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React from "react";
 import profile from "/IMG_3839.png";
 import "../css/about.css";
 import { ScrollRevealEffect } from "../efectos/ScrollReveal";
